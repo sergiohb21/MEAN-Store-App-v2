@@ -36,9 +36,9 @@ export class AuthService {
 
   async register(name: string, email: string, password: string): Promise<any> {
     const dataForm = {
-      name,
-      email,
-      password
+      "name": name,
+      "email": email,
+      "password": password
     };
 
     try {
