@@ -1,0 +1,48 @@
+version: "3.3"
+services:
+  nodejs:
+    container_name: nodejs
+    build: .
+    restart: always
+    volumes:
+      - ./nodejs:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "2525:2525"
+      - "5858:5858"
+    links:
+      - mongodb
+    environment:
+      - dev=1
+      - db_retry_time=3000
+      - db_service=mongodb
+      - db_port=27017
+      - db_database=store
+      - db_username=root
+      - db_password=root
+    depends_on:
+      - mongodb
+  mongodb:
+    container_name: mongodb
+    image: mongo:5.0
+    volumes:
+      - ./init/init-script.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./data:/data/db
+      - ./data/log:/var/log/mongodb/
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+      - MONGO_INITDB_DATABASE=store
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    restart: always
+    ports:
+      - 8082:8081
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=root
+    depends_on:
+      - mongodb
+

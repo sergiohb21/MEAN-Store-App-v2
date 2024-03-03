@@ -1,0 +1,15 @@
+<div class="container mx-auto px-4 py-8 mt-16">
+  <ng-container *ngIf="products && products.length > 0; else noProducts">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div *ngFor="let product of products">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noProducts>
+    <div class="text-center">
+      <p class="text-gray-600 mb-4">No hay productos disponibles.</p>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" (click)="goBack()">Volver atrás</button>
+    </div>
+  </ng-template>
+</div>

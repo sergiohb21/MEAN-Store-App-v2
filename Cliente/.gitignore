@@ -1,0 +1,14 @@
+# Directorios
+node_modules/
+dist/
+tmp/
+.angular/
+
+# Archivos
+*.log
+*.pid
+*.lock
+*.sqlite
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

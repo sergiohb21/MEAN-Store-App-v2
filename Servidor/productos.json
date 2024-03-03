@@ -1,0 +1,475 @@
+[
+  {
+    id: 100,
+    title: 'test13',
+    price: 12312,
+    description: '🔥',
+    images: [
+      '["https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSyexgjNod-7UgOASpagtWhv-tF55H_Hw441RM7gE8Q-hpJvdLPuo_tTrzEFBQITMuwzoH9-Z9jnCJFERe2STbl3wD8Fd6-Mu_5YDQjY5vFXb9YprZcfxPWqLAkLG8vERpWV2K84ytz0w&usqp=CAc"]'
+    ],
+    creationAt: '2024-02-26T06:27:36.000Z',
+    updatedAt: '2024-02-26T18:44:39.000Z',
+    category: {
+      id: 4,
+      name: 'Shoes',
+      image: 'https://i.imgur.com/qNOjJje.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 103,
+    title: 'New Product',
+    price: 10,
+    description: '😜',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T06:40:59.000Z',
+    updatedAt: '2024-02-26T18:44:40.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 108,
+    title: 'New Product',
+    price: 10,
+    description: '🐬',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T07:13:30.000Z',
+    updatedAt: '2024-02-26T18:44:40.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 123,
+    title: 'New Product',
+    price: 10,
+    description: '🚽',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T07:59:13.000Z',
+    updatedAt: '2024-02-26T18:44:40.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 125,
+    title: 'product-19',
+    price: 1000,
+    description: '✌',
+    images: [
+      '["https://imgs.search.brave.com/LseKwxCSWqaKB610tebN42DfzzC16-JmuON4By33t7g/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDI4OTUy/OTYuanBn"]'
+    ],
+    creationAt: '2024-02-26T08:00:20.000Z',
+    updatedAt: '2024-02-26T18:44:40.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 156,
+    title: 'New Product',
+    price: 10,
+    description: '🐮',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T09:03:27.000Z',
+    updatedAt: '2024-02-26T18:44:42.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 161,
+    title: 'new FurnitureProduct',
+    price: 110,
+    description: '🍉',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw0Bdw3RNmyF4anepXFpbwWv&ust=1709024772744000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIinrsbTyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T09:15:29.000Z',
+    updatedAt: '2024-02-26T18:44:42.000Z',
+    category: {
+      id: 3,
+      name: 'Kakaroto Onichan',
+      image: 'https://i.imgur.com/Qphac99.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T16:14:59.000Z'
+    }
+  },
+  {
+    id: 164,
+    title: 'new FurnitureProduct',
+    price: 110,
+    description: '🐬',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw0Bdw3RNmyF4anepXFpbwWv&ust=1709024772744000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIinrsbTyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T09:17:23.000Z',
+    updatedAt: '2024-02-26T18:44:42.000Z',
+    category: {
+      id: 6,
+      name: 'nuevo',
+      image: 'https://i.imgur.com/QkIa5tT.jpeg',
+      creationAt: '2024-02-26T04:53:19.000Z',
+      updatedAt: '2024-02-26T04:56:55.000Z'
+    }
+  },
+  {
+    id: 165,
+    title: 'new FurnitureProduct',
+    price: 110,
+    description: '🍎',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw0Bdw3RNmyF4anepXFpbwWv&ust=1709024772744000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIinrsbTyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T09:18:26.000Z',
+    updatedAt: '2024-02-26T18:44:42.000Z',
+    category: {
+      id: 6,
+      name: 'nuevo',
+      image: 'https://i.imgur.com/QkIa5tT.jpeg',
+      creationAt: '2024-02-26T04:53:19.000Z',
+      updatedAt: '2024-02-26T04:56:55.000Z'
+    }
+  },
+  {
+    id: 170,
+    title: 'testing',
+    price: 23,
+    description: '💣',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fnew-product&psig=AOvVaw2op69PqAjY-pMWwvtZ1ULx&ust=1709022892638000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKD6q8TMyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T09:24:30.000Z',
+    updatedAt: '2024-02-26T18:44:42.000Z',
+    category: {
+      id: 3,
+      name: 'Kakaroto Onichan',
+      image: 'https://i.imgur.com/Qphac99.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T16:14:59.000Z'
+    }
+  },
+  {
+    id: 173,
+    title: 'test',
+    price: 12,
+    description: '💜',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fnew-product&psig=AOvVaw2op69PqAjY-pMWwvtZ1ULx&ust=1709022892638000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKD6q8TMyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T09:26:52.000Z',
+    updatedAt: '2024-02-26T18:44:42.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 178,
+    title: 'hello',
+    price: 200,
+    description: '👿',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T09:37:40.000Z',
+    updatedAt: '2024-02-26T18:44:42.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 180,
+    title: 'my product',
+    price: 12,
+    description: '🐮',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fnew-product&psig=AOvVaw2op69PqAjY-pMWwvtZ1ULx&ust=1709022892638000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKD6q8TMyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T09:38:58.000Z',
+    updatedAt: '2024-02-26T18:44:43.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 181,
+    title: 'new product added',
+    price: 1200,
+    description: '🐮',
+    images: [
+      '["https://imgs.search.brave.com/jBmM81B7TVdzHAJtxUZqFKPbB649UftZA7939rc4sK8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8x/MC8xMi8yMi8xNy9i/dXNpbmVzcy0yODQ2/MjIxXzY0MC5qcGc"]'
+    ],
+    creationAt: '2024-02-26T09:40:03.000Z',
+    updatedAt: '2024-02-26T18:44:43.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 182,
+    title: 'this is title',
+    price: 12,
+    description: '👀',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fnew-product&psig=AOvVaw2op69PqAjY-pMWwvtZ1ULx&ust=1709022892638000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKD6q8TMyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T09:40:06.000Z',
+    updatedAt: '2024-02-26T18:44:43.000Z',
+    category: {
+      id: 3,
+      name: 'Kakaroto Onichan',
+      image: 'https://i.imgur.com/Qphac99.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T16:14:59.000Z'
+    }
+  },
+  {
+    id: 184,
+    title: 'test',
+    price: 200,
+    description: '🎾',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T09:40:54.000Z',
+    updatedAt: '2024-02-26T18:44:43.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 196,
+    title: 'new ',
+    price: 0,
+    description: '🐰',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fnew-product&psig=AOvVaw2op69PqAjY-pMWwvtZ1ULx&ust=1709022892638000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKD6q8TMyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T10:03:10.000Z',
+    updatedAt: '2024-02-26T18:44:43.000Z',
+    category: {
+      id: 6,
+      name: 'nuevo',
+      image: 'https://i.imgur.com/QkIa5tT.jpeg',
+      creationAt: '2024-02-26T04:53:19.000Z',
+      updatedAt: '2024-02-26T04:56:55.000Z'
+    }
+  },
+  {
+    id: 207,
+    title: 'newproduct',
+    price: 500,
+    description: '🎾',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T10:19:32.000Z',
+    updatedAt: '2024-02-26T18:44:44.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 265,
+    title: 'new',
+    price: 12,
+    description: '💰',
+    images: [
+      '["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fnew-product&psig=AOvVaw2op69PqAjY-pMWwvtZ1ULx&ust=1709022892638000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCKD6q8TMyIQDFQAAAAAdAAAAABAE"]'
+    ],
+    creationAt: '2024-02-26T12:22:58.000Z',
+    updatedAt: '2024-02-26T18:44:47.000Z',
+    category: {
+      id: 4,
+      name: 'Shoes',
+      image: 'https://i.imgur.com/qNOjJje.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 319,
+    title: 'myItem',
+    price: 10,
+    description: '💪',
+    images: [ '["https://example.com/default-image.jpg"]' ],
+    creationAt: '2024-02-26T14:04:23.000Z',
+    updatedAt: '2024-02-26T18:44:49.000Z',
+    category: {
+      id: 4,
+      name: 'Shoes',
+      image: 'https://i.imgur.com/qNOjJje.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 348,
+    title: 'prueba1',
+    price: 1,
+    description: '🏀',
+    images: [ '["https://i.imgur.com/QkIa5tT.jpeg"]' ],
+    creationAt: '2024-02-26T15:20:06.000Z',
+    updatedAt: '2024-02-26T18:44:51.000Z',
+    category: {
+      id: 3,
+      name: 'Kakaroto Onichan',
+      image: 'https://i.imgur.com/Qphac99.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T16:14:59.000Z'
+    }
+  },
+  {
+    id: 350,
+    title: 'prueba1',
+    price: 1,
+    description: '🎈',
+    images: [ '["https://i.imgur.com/QkIa5tT.jpeg"]' ],
+    creationAt: '2024-02-26T15:23:05.000Z',
+    updatedAt: '2024-02-26T18:44:51.000Z',
+    category: {
+      id: 3,
+      name: 'Kakaroto Onichan',
+      image: 'https://i.imgur.com/Qphac99.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T16:14:59.000Z'
+    }
+  },
+  {
+    id: 351,
+    title: 'prueba1',
+    price: 1,
+    description: '😡',
+    images: [ '["https://i.imgur.com/QkIa5tT.jpeg"]' ],
+    creationAt: '2024-02-26T15:23:39.000Z',
+    updatedAt: '2024-02-26T18:44:51.000Z',
+    category: {
+      id: 3,
+      name: 'Kakaroto Onichan',
+      image: 'https://i.imgur.com/Qphac99.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T16:14:59.000Z'
+    }
+  },
+  {
+    id: 493,
+    title: 'item test',
+    price: 2,
+    description: 'hello',
+    images: [ '["https://api.escuelajs.co/api/v1/files/2040.jpeg"]' ],
+    creationAt: '2024-02-26T21:35:39.000Z',
+    updatedAt: '2024-02-26T21:35:39.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 495,
+    title: 'Movies',
+    price: 123,
+    description: 'A description',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T21:39:38.000Z',
+    updatedAt: '2024-02-26T21:39:38.000Z',
+    category: {
+      id: 5,
+      name: 'Miscellaneous',
+      image: 'https://i.imgur.com/BG8J0Fj.jpg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 496,
+    title: 'new movie',
+    price: 123,
+    description: 'A description',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T21:39:59.000Z',
+    updatedAt: '2024-02-26T21:39:59.000Z',
+    category: {
+      id: 6,
+      name: 'nuevo',
+      image: 'https://i.imgur.com/QkIa5tT.jpeg',
+      creationAt: '2024-02-26T04:53:19.000Z',
+      updatedAt: '2024-02-26T04:56:55.000Z'
+    }
+  },
+  {
+    id: 501,
+    title: 'Nueva productJ',
+    price: 10000,
+    description: 'nueva descripcion',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T21:51:54.000Z',
+    updatedAt: '2024-02-26T21:51:54.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  },
+  {
+    id: 503,
+    title: 'Nueva productJ',
+    price: 10000,
+    description: 'nueva descripcion',
+    images: [ '["https://placeimg.com/640/480/any"]' ],
+    creationAt: '2024-02-26T21:54:26.000Z',
+    updatedAt: '2024-02-26T21:54:26.000Z',
+    category: {
+      id: 2,
+      name: 'Electronics',
+      image: 'https://i.imgur.com/ZANVnHE.jpeg',
+      creationAt: '2024-02-26T03:47:13.000Z',
+      updatedAt: '2024-02-26T03:47:13.000Z'
+    }
+  }
+]
+
