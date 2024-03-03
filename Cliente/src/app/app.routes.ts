@@ -4,9 +4,10 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
-
+import { LoginFormComponent } from './components/login-form/login-form.component';
 export const routes: Routes = [
-    { path: '', redirectTo: '/inicio', pathMatch: 'full' }, 
+    { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+    { path: 'login', component: LoginFormComponent },
     { path: 'inicio', component: InicioComponent, data: { breadcrumb: 'Inicio' } },
     { path: 'productos', component: ProductsComponent, data: { breadcrumb: 'Productos' } },
     { path: 'productos-categoria/:categoriaId', component: ProductsComponent, data: { breadcrumb: 'Productos por Categoría' } },
