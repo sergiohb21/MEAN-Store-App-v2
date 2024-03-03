@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-form',
@@ -15,14 +15,18 @@ export class RegisterFormComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+    ) { }
 
   async register() {
     try {
       const response = await this.authService.register(this.name, this.email, this.password);
       console.log('Usuario registrado con exito', response);
+      this.router.navigate(['/registro']);
     } catch (error) {
-      console.log('Error al registrar el usuario',error);
+      console.log('Error al registrar el usuario');
     }
   }
 
