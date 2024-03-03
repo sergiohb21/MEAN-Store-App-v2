@@ -33,5 +33,33 @@ export class AuthService {
       throw new Error('Error en la autenticación');
     }
   }
+
+  async register(name: string, email: string, password: string): Promise<any> {
+    const dataForm = {
+      name,
+      email,
+      password
+    };
+
+    try {
+      const response = await fetch(`${this.apiUrl}/registro`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataForm)
+      });
+
+      if (!response.ok) {
+        throw new Error('Error en el registro');
+      }
+
+      return response.json();
+    } catch (error) {
+      console.error('Error en el registro:', error);
+      throw new Error('Error en el registro');
+    }
+  }
+
 }
 
