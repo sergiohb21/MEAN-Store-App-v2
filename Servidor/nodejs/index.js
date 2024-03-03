@@ -3,8 +3,9 @@ const mongoose       = require('mongoose');
 const bodyParser     = require('body-parser'); //Parsea el cuerpo de las solicitudes en formato JSON
 const cors           = require('cors');  //mÃ³dulo para permitir CORS
 const rutasProducto  = require("./rutas/producto")
-const rutasUsuario   = require("./rutas/usuario")
 const rutasCategoria = require("./rutas/categoria")
+const authRoutes     = require('./rutas/auth');
+const verifyToken    = require('./rutas/validate-token');
 const config         = require("./config");
 const app            = express();
 
@@ -34,9 +35,9 @@ db.on('error', () => {   // si hay un fallo de la conexión se vuelve a intentar
 });
 
 db.on('connected', () =>{
-  app.use(rutasProducto);
-  app.use(rutasUsuario);
-  app.use(rutasCategoria);
+  app.use(rutasProducto); //añadir verifyoken
+  app.use(rutasCategoria); //añadir verifyoken
+  app.use(authRoutes); //añadir verifyoken
   
   app.listen(config.PORT, () => {
       console.log(`Servidor escuchando en http://localhost:${config.PORT}`)

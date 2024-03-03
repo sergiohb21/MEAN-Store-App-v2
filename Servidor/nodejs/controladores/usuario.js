@@ -1,82 +1,90 @@
 require('../modelos/usuario'); 
 
 const mongoose = require('mongoose');
-const Usuario = mongoose.model('Usuario');
+const Usuario  = mongoose.model('Usuario');
+const jwt      = require('jsonwebtoken');
+const bcrypt   = require('bcrypt');
 
-async function getUsuarios(req, res) {
+const Joi = require('@hapi/joi');
+
+const schemaRegister = Joi.object({
+    name: Joi.string().min(6).max(255).required(),
+    email: Joi.string().min(6).max(255).required().email(),
+    password: Joi.string().min(6).max(1024).required()
+})
+
+
+async function addUsuario(req, res) {
+  
+  // validate user
+  const { error } = schemaRegister.validate(req.body)
+     
+  if (error) {
+      return res.status(400).json(
+          {error: error.details[0].message}
+      )
+  }
+
+  const isEmailExist = await Usuario.findOne({ email: req.body.email });
+  if (isEmailExist) {
+      return res.status(400).json(
+          {error: 'Email ya registrado'}
+      )
+  }
+
+  // hash contraseña
+  const salt = await bcrypt.genSalt(10);
+  const password = await bcrypt.hash(req.body.password, salt);
+
+  const user = new Usuario({
+      name: req.body.name,
+      email: req.body.email,
+      password: password
+  });
   try {
-    const usuariosLeidos = await Usuario.find({});
-    if (usuariosLeidos && usuariosLeidos.length > 0) {
-      return res.status(200).send(usuariosLeidos);
-    } else {
-      return res.status(200).send([]); // Devuelve un array vacío si no hay usuarios encontrados
-    }
+      const savedUser = await user.save();
+      res.json({
+          error: null,
+          data: savedUser
+      })
   } catch (error) {
-    return res.status(400).send({
-      status: 'failure',
-      error: error.message // Devuelve el mensaje de error para facilitar la depuración
-    });
+      res.status(400).json({error})
   }
 }
 
-async function crearUsuario(req, res) {
-  try {
-    const usuarioData = req.body; // Renombrar para mayor claridad
-    if (usuarioData._id == "") {
-      delete usuarioData._id;
-    }
-    const usuario = new Usuario(usuarioData);
-    await usuario.save();
-    return res.status(200).send({
-      status: 'success'
-    });
-  } catch (error) {
-    return res.status(400).send({
-      status: 'failure',
-      error: error.message
-    });
-  }
+
+const schemaLogin = Joi.object({
+    email: Joi.string().min(6).max(255).required().email(),
+    password: Joi.string().min(6).max(1024).required()
+})
+
+async function loginUsuario(req, res) {
+  
+  // validaciones
+  const { error } = schemaLogin.validate(req.body);
+  if (error) return res.status(400).json({ error: error.details[0].message })
+  
+  const user = await Usuario.findOne({ email: req.body.email });
+  if (!user) return res.status(400).json({ error: 'Usuario no encontrado' });
+
+  const validPassword = await bcrypt.compare(req.body.password, user.password);
+  if (!validPassword) return res.status(400).json({ error: 'contraseña no válida' })
+  
+  res.json({
+      error: null,
+      data: 'exito bienvenido'
+  })
+
+  // create token
+  const token = jwt.sign({
+      name: user.name,
+      id: user._id
+  }, process.env.TOKEN_SECRET)
+
+  res.header('auth-token', token).json({
+      error: null,
+      data: {token}
+  })
 }
 
-async function getUsuario(req, res) {
-  try {
-    const usuarioLeido = await Usuario.findOne({ '_id': req.params.id });
-    if (usuarioLeido) {
-      return res.send(usuarioLeido);
-    } else {
-      return res.status(404).send({ status: 'not found' }); // Devuelve un 404 si el usuario no se encuentra
-    }
-  } catch (error) {
-    return res.status(400).send({
-      status: 'failure',
-      error: error.message
-    });
-  }
-}
-
-async function modificarUsuario(req, res) {
-  try {
-    const usuarioData = req.body;
-    await Usuario.updateOne({ '_id': usuarioData._id }, usuarioData);
-    return res.send({ status: 'success' });
-  } catch (error) {
-    return res.status(400).send({
-      status: 'failure',
-      error: error.message
-    });
-  }
-}
-
-async function borrarUsuario(req, res) {
-  try {
-    await Usuario.deleteOne({ '_id': req.params.id });
-    return res.send({ status: 'success' });
-  } catch (error) {
-    return res.status(400).send({
-      status: 'failure',
-      error: error.message
-    });
-  }
-}
-
-module.exports = { getUsuarios, crearUsuario, borrarUsuario, getUsuario, modificarUsuario };
+module.exports = { addUsuario, loginUsuario };
