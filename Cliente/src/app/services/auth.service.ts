@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:2525';
+  private apiUrl   = 'http://localhost:2525';
+  private tokenKey = 'auth-token';
 
   constructor() { }
 
@@ -27,7 +28,12 @@ export class AuthService {
         throw new Error('Credenciales inválidas');
       }
 
-      return response.json();
+      const responseData = await response.json();
+      console.log(responseData);
+      
+      // Guardar el token en localStorage
+      this.setToken(responseData.data);
+
     } catch (error) {
       console.error('Error en la autenticación:', error);
       throw new Error('Error en la autenticación');
@@ -59,6 +65,18 @@ export class AuthService {
       console.error('Error en el registro:', error);
       throw new Error('Error en el registro');
     }
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem(this.tokenKey);
+  }
+
+  private setToken(token: string): void {
+    localStorage.setItem(this.tokenKey, token);
+  }
+
+  logout(): void {
+    localStorage.removeItem(this.tokenKey);
   }
 
 }

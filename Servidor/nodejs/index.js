@@ -12,10 +12,10 @@ const verifyToken    = require('./rutas/validate-token');
 const config         = require("./config");
 const app            = express();
 
+app.use(cors()); // NO OLVIDAR QUITAR EN PRODUCCION SINO SE DESEA CORS
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors()); // NO OLVIDAR QUITAR EN PRODUCCION SINO SE DESEA CORS
 
 const mongoUri = `mongodb://${config.DB_SERVICE}:${config.DB_PORT}/${config.DB_DATABASE}?authSource=admin`; // url de la base de datos mongodb
 
