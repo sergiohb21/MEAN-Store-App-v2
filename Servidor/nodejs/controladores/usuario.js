@@ -5,6 +5,10 @@ const Usuario  = mongoose.model('Usuario');
 const jwt      = require('jsonwebtoken');
 const bcrypt   = require('bcrypt');
 const Joi      = require('@hapi/joi');
+const dotenv   = require('dotenv');
+
+// get config vars
+dotenv.config();
 
 
 const schemaRegister = Joi.object({
@@ -76,16 +80,18 @@ async function loginUsuario(req, res) {
       name: user.name,
       id: user._id
     }, process.env.TOKEN_SECRET)
-    
-    res.json({
+
+    /*
+    res.header('auth-token', token).json({
+        error: null,
+        data: {token}
+    })
+    */
+    return res.status(200).json({
         error: null,
         data: token
     })
-    
-  res.header('auth-token', token).json({
-      error: null,
-      data: {token}
-  })
+
 }
 
 module.exports = { addUsuario, loginUsuario };

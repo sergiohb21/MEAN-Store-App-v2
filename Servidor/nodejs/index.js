@@ -5,12 +5,16 @@ const cors           = require('cors');  //mÃ³dulo para permitir CORS
 const jwt            = require('jsonwebtoken');
 const bcrypt         = require('bcrypt');
 const Joi            = require('@hapi/joi');
+const dotenv         = require('dotenv');
 const rutasProducto  = require("./rutas/producto")
 const rutasCategoria = require("./rutas/categoria")
 const authRoutes     = require('./rutas/auth');
 const verifyToken    = require('./rutas/validate-token');
 const config         = require("./config");
 const app            = express();
+
+// get config vars
+dotenv.config();
 
 app.use(cors()); // NO OLVIDAR QUITAR EN PRODUCCION SINO SE DESEA CORS
 app.use(express.urlencoded({ extended: true }));

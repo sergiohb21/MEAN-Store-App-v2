@@ -18,7 +18,6 @@ export class AuthService {
     try {
       const response = await fetch(`${this.apiUrl}/login`, {
         method: 'POST',
-        mode: 'cors',
         headers: {
           'Content-Type': 'application/json'
         },
