@@ -11,13 +11,14 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<any> {
     const dataForm = {
-      email,
-      password
+      "email": email,
+      "password": password
     };
 
     try {
       const response = await fetch(`${this.apiUrl}/login`, {
         method: 'POST',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json'
         },
