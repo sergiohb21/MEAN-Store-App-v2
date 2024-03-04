@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const Usuario  = mongoose.model('Usuario');
 const jwt      = require('jsonwebtoken');
 const bcrypt   = require('bcrypt');
+const Joi      = require('@hapi/joi');
 
-const Joi = require('@hapi/joi');
 
 const schemaRegister = Joi.object({
     name: Joi.string().min(6).max(255).required(),
