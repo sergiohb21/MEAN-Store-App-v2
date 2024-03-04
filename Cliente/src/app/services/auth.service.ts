@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import  jwtDecode   from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private apiUrl   = 'http://localhost:2525';
   private tokenKey = 'auth-token';
+  private usuarioKey = 'Usuario';
 
   constructor(private router: Router) { }
 
@@ -34,7 +36,7 @@ export class AuthService {
       
       // Guardar el token en localStorage
       this.setToken(responseData.data);
-
+      this.router.navigate(["/inicio"]);
     } catch (error) {
       console.error('Error en la autenticación:', error);
       throw new Error('Error en la autenticación');
@@ -68,12 +70,25 @@ export class AuthService {
     }
   }
 
-  validarToken():void{
-    if (localStorage.getItem('auth-token') === null) {
-      this.router.navigate(['/login']);
+  isLoggedIn(): boolean {
+    const token = localStorage.getItem('auth-token');
+    if (token) {
+      const tokenInfo = this.parseJwt(token);
+      const expTime = tokenInfo.exp * 1000; 
+      const ahora = Date.now(); 
+      localStorage.setItem("Usuario", JSON.stringify(tokenInfo));
+      return expTime > ahora;
     }
+    return false;
   }
 
+  private parseJwt(token: string): any {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+    return JSON.parse(jsonPayload);
+  }
+  
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
   }
@@ -84,7 +99,10 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem(this.usuarioKey);
+    this.router.navigate(["/login"]);
   }
+
 
 }
 

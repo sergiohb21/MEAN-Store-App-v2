@@ -10,7 +10,6 @@ const dotenv   = require('dotenv');
 // get config vars
 dotenv.config();
 
-
 const schemaRegister = Joi.object({
     name: Joi.string().min(6).max(255).required(),
     email: Joi.string().min(6).max(255).required().email(),
@@ -74,11 +73,14 @@ async function loginUsuario(req, res) {
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword) return res.status(400).json({ error: 'contraseña no válida' })
   
+  const expirationTime = Math.floor(Date.now() / 1000) + (60 * 60);
+  if (!expirationTime) return res.status(400).json({ error: 'Tiempo expiracion no válido' });
   
   // create token
   const token = jwt.sign({
       name: user.name,
-      id: user._id
+      id: user._id,
+      exp: expirationTime
     }, process.env.TOKEN_SECRET)
 
     /*
