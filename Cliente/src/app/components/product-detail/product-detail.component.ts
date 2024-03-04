@@ -4,12 +4,13 @@ import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BackButtonComponent } from '../back-button/back-button.component';
 
 
 @Component({
   selector: 'app-product-detail',
   standalone: true,
-  imports: [NgIf, FormsModule],
+  imports: [NgIf, FormsModule, BackButtonComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.css'
 })
@@ -25,7 +26,7 @@ export class ProductDetailComponent {
   constructor(
     private route: ActivatedRoute, 
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
   ) { }
 
   ngOnInit() {

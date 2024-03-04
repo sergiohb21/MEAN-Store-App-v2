@@ -5,12 +5,13 @@ import { ProductService } from '../../services/product.service';
 import { CategoryService } from '../../services/category.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BackButtonComponent } from '../back-button/back-button.component';
 
 
 @Component({
   selector: 'app-add-product',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, BackButtonComponent],
   templateUrl: './add-product.component.html',
   styleUrl: './add-product.component.css'
 })

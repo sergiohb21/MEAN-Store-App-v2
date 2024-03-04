@@ -4,12 +4,13 @@ import { ProductService } from '../../services/product.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BackButtonComponent } from '../back-button/back-button.component';
 
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [ProductCardComponent, NgFor, NgIf],
+  imports: [ProductCardComponent, BackButtonComponent, NgFor, NgIf],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
