@@ -21,6 +21,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     initFlowbite();
+    
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const currentRoute = this.router.url.split('/')[1]; // Obtiene la ruta actual (primer segmento después de la barra)
