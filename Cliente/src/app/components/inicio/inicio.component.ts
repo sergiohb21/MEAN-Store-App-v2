@@ -3,6 +3,7 @@ import { Category } from '../../models/category';
 import { CategoryService } from '../../services/category.service';
 import { CategoryCardComponent } from '../category-card/category-card.component';
 import { NgFor } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-inicio',
@@ -14,11 +15,15 @@ import { NgFor } from '@angular/common';
 export class InicioComponent {
   categories?: Category[];
 
-  constructor(private CategoryService: CategoryService) { }
+  constructor(
+    private CategoryService: CategoryService,
+    private AuthService: AuthService
+    ) { }
 
   ngOnInit(): void {
     this.CategoryService.getCategories().then(categories => {
       this.categories = categories;
     });
+    this.AuthService.validarToken();
   }
 }

@@ -21,8 +21,8 @@ export class LoginFormComponent {
 
   async login() {
     try {
-      const response = await this.authService.login(this.email, this.password).then(data => console.log(data));
-      console.log('Inicio de sesión exitoso', response);
+      const response = await this.authService.login(this.email, this.password);
+      console.log('Inicio de sesión exitoso');
       this.router.navigate(['/inicio']);
     } catch (error) {
       console.log('Error al iniciar sesión:');

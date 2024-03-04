@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class AuthService {
   private apiUrl   = 'http://localhost:2525';
   private tokenKey = 'auth-token';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   async login(email: string, password: string): Promise<any> {
     const dataForm = {
@@ -64,6 +65,12 @@ export class AuthService {
     } catch (error) {
       console.error('Error en el registro:', error);
       throw new Error('Error en el registro');
+    }
+  }
+
+  validarToken():void{
+    if (localStorage.getItem('auth-token') === null) {
+      this.router.navigate(['/login']);
     }
   }
 
