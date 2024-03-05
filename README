@@ -19,7 +19,7 @@ Este proyecto consiste en una aplicación web dividida en dos partes: Cliente y 
     ng serve
     ```
 
-    🚀 La aplicación Angular estará disponible en [http://localhost:4200/](http://localhost:4200/).
+    🚀 La aplicación Angular estará disponible en [http://localhost:4200/].
 
 ### Servidor
 
@@ -43,9 +43,9 @@ Este proyecto consiste en una aplicación web dividida en dos partes: Cliente y 
     docker-compose up
     ```
 
-    🐳 Mongo Express estará disponible en [http://localhost:8082/](http://localhost:8082/) con las credenciales de administrador "admin:pass".
+    🐳 Mongo Express estará disponible en [http://localhost:8082/] con las credenciales de administrador "admin:pass".
 
 ## Información adicional
 
-- 🌐 La aplicación Angular corre en [http://localhost:4200/](http://localhost:4200/).
-- 🛠️ Mongo Express está disponible en [http://localhost:8082/](http://localhost:8082/) con las credenciales de administrador "admin:pass".
+- 🌐 La aplicación Angular corre en [http://localhost:4200/].
+- 🛠️ Mongo Express está disponible en [http://localhost:8082/] con las credenciales de administrador "admin:pass".
