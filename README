@@ -1,0 +1,66 @@
+# Proyecto MEAN-STORE-APP
+
+Este proyecto está dividido en dos partes: Cliente y Servidor.
+
+## Montar el entorno de desarrollo
+
+### Cliente
+
+1. Navega hasta la carpeta Cliente:
+
+    ```
+    cd Cliente
+    ```
+
+2. Instala las dependencias:
+
+    ```
+    npm install
+    ```
+
+3. Ejecuta el servidor de desarrollo de Angular:
+
+    ```
+    ng serve
+    ```
+
+La aplicación Angular estará disponible en http://localhost:4200/.
+
+### Servidor
+
+1. Navega hasta la carpeta Servidor/nodejs:
+
+    ```
+    cd Servidor/nodejs
+    ```
+
+2. Instala las dependencias:
+
+    ```
+    npm install
+    ```
+
+3. Regresa a la carpeta Servidor:
+
+    ```
+    cd ../
+    ```
+
+4. Construye la imagen Docker (solo la primera vez):
+
+    ```
+    docker-compose build
+    ```
+
+5. Levanta los contenedores Docker:
+
+    ```
+    docker-compose up
+    ```
+
+Mongo Express estará disponible en http://localhost:8082/ con las credenciales de administrador "admin:pass".
+
+## Información adicional
+
+- La aplicación Angular corre en http://localhost:4200/.
+- Mongo Express está disponible en http://localhost:8082/ con las credenciales de administrador "admin:pass".
